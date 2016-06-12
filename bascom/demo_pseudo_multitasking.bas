@@ -4,11 +4,17 @@ $hwstack=40
 $swstack=16
 $framesize=32
 
+'########################################
+'
+' https://github.com/dekoch/digispark
+'
+'########################################
 
 'pseudo multitasking use TIMER0
 Config Timer0 = Timer , Prescale = 256
 On Timer0 Scheduler
-Load Timer0 = 131 ' 2 ms sample
+Const Timer0_Preload = 131
+Load Timer0 = Timer0_Preload ' 2 ms sample
 Enable Timer0
 Start Timer0
 
@@ -100,6 +106,7 @@ End
 
 
 Scheduler:
+   Timer0 = Timer0_Preload
 
    Incr T
 
