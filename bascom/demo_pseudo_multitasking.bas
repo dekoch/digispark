@@ -116,18 +116,21 @@ Scheduler:
       Task3 = 0
    End If
 
-   If T >= 5 Then
+   If T >= 4 Then
       Task1 = 0
       Task2 = 1
       Task3 = 0
    End If
 
-   If T >= 9 Then
+   If T >= 7 Then
       Task1 = 0
       Task2 = 0
       Task3 = 1
+   End If
 
+   If T >= 9 Then
       T = 0
+      Delay
    End If
 
 Return
